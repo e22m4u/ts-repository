@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@e22m4u/js-repository-decorators": "~0.3.0",
-    "@e22m4u/js-repository": "~0.6.0"
+    "@e22m4u/js-repository": "~0.6.1"
   },
   "devDependencies": {
     "@commitlint/cli": "~20.1.0",
