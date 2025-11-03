@@ -132,7 +132,7 @@ console.log(userWithRole);
 Класс `DatabaseSchema` данного модуля наследует все методы базового класса
 и добавляет два новых для работы с классами моделей.
 
-#### defineModelByClass
+### defineModelByClass
 
 Извлекает определение модели из класса, декорированного `@model`,
 и регистрирует его в схеме.
@@ -149,7 +149,7 @@ dbs.defineDatasource({name: 'myDb', adapter: 'memory'});
 dbs.defineModelByClass(MyModel);
 ```
 
-#### getRepositoryByModelClass
+### getRepositoryByModelClass
 
 Возвращает типизированный экземпляр `Repository` для указанного класса модели.
 
