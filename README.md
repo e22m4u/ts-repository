@@ -121,7 +121,7 @@ console.log(userWithRole);
 Класс `DatabaseSchema` данного пакета наследует все методы базового класса
 и добавляет два новых для работы с классами моделей.
 
-### defineModelByClass
+#### defineModelByClass
 
 Извлекает определение модели из класса, декорированного `@model`,
 и регистрирует его в схеме.
@@ -138,7 +138,7 @@ dbs.defineDatasource({name: 'myDb', adapter: 'memory'});
 dbs.defineModelByClass(MyModel);
 ```
 
-### getRepositoryByModelClass
+#### getRepositoryByModelClass
 
 Возвращает типизированный экземпляр `Repository` для указанного класса модели.
 
@@ -165,14 +165,14 @@ const repository = dbs.getRepositoryByModelClass(MyModel);
 ## Декораторы
 
 Модуль реэкспортирует все декораторы из пакета
-`@e22m4u/js-repository-decorators`.
+[@e22m4u/js-repository-decorators](https://www.npmjs.com/package/@e22m4u/js-repository-decorators).
 
 - `@model` - объявление модели;
 - `@property` - объявление свойства;
 - `@relation` - объявление связи;
 
 Подробное описание каждого декоратора и его опций доступно в
-[документации @e22m4u/js-repository-decorators](https://www.npmjs.com/package/@e22m4u/js-repository-decorators).
+[документации](https://www.npmjs.com/package/@e22m4u/js-repository-decorators) связанного модуля.
 
 
 ## Тесты
