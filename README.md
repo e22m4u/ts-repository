@@ -7,7 +7,7 @@
 
 Модуль реэкспортирует все сущности из указанных ниже пакетов:
 
-- [@e22m4u/js-repository](https://www.npmjs.com/package/@e22m4u/js-repository) - реализация паттерна «Репозиторий»;
+- [@e22m4u/js-repository](https://www.npmjs.com/package/@e22m4u/js-repository) - реализация паттерна «Репозиторий» для баз данных;
 - [@e22m4u/js-repository-decorators](https://www.npmjs.com/package/@e22m4u/js-repository) - декораторы для описания моделей;
 
 ## Установка
