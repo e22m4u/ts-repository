@@ -10,6 +10,17 @@
 - [@e22m4u/js-repository](https://www.npmjs.com/package/@e22m4u/js-repository) - реализация паттерна «Репозиторий» для баз данных;
 - [@e22m4u/js-repository-decorators](https://www.npmjs.com/package/@e22m4u/js-repository) - декораторы для описания моделей;
 
+## Оглавление
+
+- [Установка](#установка)
+- [Пример](#пример)
+- [Расширение DatabaseSchema](#расширение-databaseschema)
+  - [defineModelByClass](#definemodelbyclass)
+  - [getRepositoryByModelClass](#getrepositorybymodelclass)
+- [Декораторы](#декораторы)
+- [Тесты](#тесты)
+- [Лицензия](#лицензия)
+
 ## Установка
 
 ```bash
