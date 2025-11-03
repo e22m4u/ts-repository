@@ -1,11 +1,14 @@
 ## @e22m4u/ts-repository
 
-Реализация репозитория для работы с базами данных с поддержкой TypeScript
-классов в качестве моделей. Модуль расширяет класс `DatabaseSchema` из пакета
-[@e22m4u/js-repository](https://github.com/e22m4u/js-repository) методами
-для определения моделей используя TypeScript классы.
+Модуль предоставляет расширенную версию класса `DatabaseSchema` из пакета
+[@e22m4u/js-repository](#https://www.npmjs.com/package/@e22m4u/js-repository)
+для работы в TypeScript окружении. Он добавляет методы, которые позволяют определять модели данных и получать репозитории, используя TypeScript классы
+вместо объектов с определениями.
 
-Декораторы [@e22m4u/js-repository-decorators](https://github.com/e22m4u/js-repository-decorators)
+Модуль реэкспортирует все сущности из указанных ниже пакетов:
+
+- [@e22m4u/js-repository](https://www.npmjs.com/package/@e22m4u/js-repository) - реализация паттерна «Репозиторий»;
+- [@e22m4u/js-repository-decorators](https://www.npmjs.com/package/@e22m4u/js-repository) - декораторы для описания моделей;
 
 ## Установка
 
@@ -25,92 +28,152 @@ npm install @e22m4u/ts-repository
 }
 ```
 
-## Использование
+## Пример
 
-Создание экземпляра схемы базы данных.
+1\. Объявление источника данных и моделей с помощью декораторов.
 
 ```ts
-import {DatabaseSchema} from '@e22m4u/ts-repository';
+import {
+  model,
+  property,
+  relation,
+  DataType,
+  RelationType
+  DatabaseSchema,
+} from '@e22m4u/ts-repository';
 
+// создание экземпляра схемы
 const dbs = new DatabaseSchema();
-```
 
-Определение источников показано на примере
-[MongoDB адаптера](https://www.npmjs.com/package/@e22m4u/js-repository-mongodb-adapter).
-
-```ts
+// объявление источника данных
 dbs.defineDatasource({
-  name: 'myMongo', // название источника
-  adapter: 'mongodb', // имя адаптера
-  // параметры
-  host: '127.0.0.1',
-  port: 27017,
-  database: 'myDatabase',
+  name: 'myDb',
+  adapter: 'memory',
 });
-```
 
-Объявление модели (см. [Декораторы](https://www.npmjs.com/package/@e22m4u/js-repository-decorators)).
-
-```ts
-import {model} from '@e22m4u/ts-repository';
-import {property} from '@e22m4u/ts-repository';
-import {DataType} from '@e22m4u/ts-repository';
-
-@model({datasource: 'myMongo'})
-class User {
+// модель Role
+@model({datasource: 'myDb'})
+class Role {
   @property({
-    type: DataType.STRING,
+    type: DataType.NUMBER,
     primaryKey: true,
   })
-  id!: string;
-
-  @property({
-    type: DataType.STRING,
-    required: true,
-  })
-  name!: string;
+  id!: number;
   
-  @property(DataType.NUMBER)
-  age!: number;
+  @property(DataType.STRING)
+  name?: string;
 }
 
-// регистрация модели
-dbs.defineModelByClass(User)
+// модель User
+@model({datasource: 'myDb'})
+class User {
+  @property({
+    type: DataType.NUMBER,
+    primaryKey: true,
+  })
+  id!: number;
+
+  @property(DataType.STRING)
+  name?: string;
+
+  @property(DataType.NUMBER)
+  roleId?: number;
+
+  @relation({
+    type: RelationType.BELONGS_TO,
+    model: Role.name,
+  })
+  role?: Role;
+}
 ```
 
-Работа с репозиторием (см. [Репозиторий](https://www.npmjs.com/package/@e22m4u/js-repository#%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B9)).
+2\. Регистрация моделей и работа с репозиторием.
 
 ```ts
-// получение репозитория для User
+// регистрация моделей по классам
+dbs.defineModelByClass(Role);
+dbs.defineModelByClass(User);
+
+// получение типизированных репозиториев
+const roleRep = dbs.getRepositoryByModelClass(Role);
 const userRep = dbs.getRepositoryByModelClass(User);
 
-// добавление в коллекцию User нового документа
-let user = await userRep.create({
-  name: 'John Doe',
-  age: '24'
-});
-console.log(user);
-// {
-//   id: '686133c3ba947189b202a827',
-//   name: 'John Doe',
-//   age: 24
-// }
+// создание документов
+const role = await roleRep.create({name: 'Admin'});
+const user = await userRep.create({name: 'John', roleId: role.id});
 
-// обновление документа User по идентификатору
-user = await userRep.patchById(user.id, {
-  name: 'John Smith',
+// поиск документа с разрешением связи
+const userWithRole = await userRep.findById(user.id, {
+  include: 'role',
 });
-console.log(user);
-// {
-//   id: '686133c3ba947189b202a827',
-//   name: 'John Smith',
-//   age: 24
-// }
 
-// удаление документа User по идентификатору
-const count = await userRep.deleteById(user.id);
-console.log(count); // 1
+console.log(userWithRole);
+// {
+//   id: 1,
+//   name: 'John',
+//   roleId: 1,
+//   role: {id: 1, name: 'Admin'}
+// }
 ```
+
+## Расширение DatabaseSchema
+
+Класс `DatabaseSchema` из этого пакета наследует все методы базового класса
+и добавляет два новых для работы с классами моделей.
+
+### defineModelByClass
+
+Извлекает определение модели из класса, декорированного `@model`,
+и регистрирует его в схеме.
+
+```ts
+import {model, DatabaseSchema} from '@e22m4u/ts-repository';
+
+@model({datasource: 'myDb'})
+class MyModel {}
+
+const dbs = new DatabaseSchema();
+dbs.defineDatasource({name: 'myDb', adapter: 'memory'});
+
+dbs.defineModelByClass(MyModel);
+```
+
+### getRepositoryByModelClass
+
+Возвращает типизированный экземпляр `Repository` для указанного класса модели.
+
+```ts
+import {
+  model,
+  Repository,
+  DatabaseSchema,
+} from '@e22m4u/js-repository';
+
+@model({datasource: 'myDb'})
+class MyModel {
+  id!: string;
+}
+
+const dbs = new DatabaseSchema();
+dbs.defineDatasource({name: 'myDb', adapter: 'memory'});
+dbs.defineModelByClass(MyModel);
+
+const repository = dbs.getRepositoryByModelClass(MyModel);
+// Repository<MyModel>
+```
+
+## Декораторы
+
+Модуль реэкспортирует все декораторы из пакета
+`@e22m4u/js-repository-decorators`.
+
+- `@model` - объявление модели;
+- `@property` - объявление свойства;
+- `@relation` - объявление связи;
+
+Подробное описание каждого декоратора и его опций доступно в
+[документации @e22m4u/js-repository-decorators](https://www.npmjs.com/package/@e22m4u/js-repository-decorators).
+
 
 ## Тесты
 
