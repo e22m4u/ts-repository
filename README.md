@@ -118,7 +118,7 @@ console.log(userWithRole);
 
 ## Расширение DatabaseSchema
 
-Класс `DatabaseSchema` данного пакета наследует все методы базового класса
+Класс `DatabaseSchema` данного модуля наследует все методы базового класса
 и добавляет два новых для работы с классами моделей.
 
 #### defineModelByClass
