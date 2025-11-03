@@ -137,6 +137,21 @@ console.log(userWithRole);
 Извлекает определение модели из класса, декорированного `@model`,
 и регистрирует его в схеме.
 
+Сигнатура:
+
+```ts
+/**
+ * Зарегистрировать модель по классу.
+ *
+ * @param ctor
+ */
+defineModelByClass<T extends object>(
+  ctor: Constructor<T>,
+): this;
+```
+
+Пример:
+
 ```ts
 import {model, DatabaseSchema} from '@e22m4u/ts-repository';
 
@@ -152,6 +167,21 @@ dbs.defineModelByClass(MyModel);
 ### getRepositoryByModelClass
 
 Возвращает типизированный экземпляр `Repository` для указанного класса модели.
+
+Сигнатура:
+
+```ts
+/**
+ * Получить репозиторий по классу модели.
+ *
+ * @param ctor
+ */
+getRepositoryByModelClass<T extends object>(
+  ctor: Constructor<T>,
+): Repository<T>;
+```
+
+Пример:
 
 ```ts
 import {
