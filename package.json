@@ -1,6 +1,6 @@
 {
   "name": "@e22m4u/ts-repository",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Реализация репозитория с поддержкой TypeScript классов и декораторов",
   "author": "Mikhail Evstropov <e22m4u@yandex.ru>",
   "license": "MIT",
