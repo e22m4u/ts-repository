@@ -40,8 +40,8 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@e22m4u/js-repository-decorators": "~0.3.0",
-    "@e22m4u/js-repository": "~0.6.3"
+    "@e22m4u/js-repository-decorators": "~0.3.1",
+    "@e22m4u/js-repository": "~0.6.4"
   },
   "devDependencies": {
     "@commitlint/cli": "~20.1.0",
