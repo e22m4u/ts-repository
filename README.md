@@ -208,9 +208,9 @@ const repository = dbs.getRepositoryByModelClass(MyModel);
 
 ## Декораторы
 
-- [@model](#modeloptions-modeloptions) - объявление модели
-- [@property](#propertymetadata-propertymetadata) - объявление свойства
-- [@relation](#relationmetadata-relationmetadata) - объявление связи
+- [@model](#modeloptions-modeloptions) - объявление модели;
+- [@property](#propertymetadata-propertymetadata) - объявление свойства;
+- [@relation](#relationmetadata-relationmetadata) - объявление связи;
 
 ### @model(options?: ModelOptions)
 
@@ -231,7 +231,8 @@ class User {}
 
 #### ModelOptions.datasource
 
-Определение [источника данных](https://www.npmjs.com/package/@e22m4u/js-repository#%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85).
+Определение источника данных.  
+*(см. раздел «Источник данных» [основного модуля](https://www.npmjs.com/package/@e22m4u/js-repository#%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85))*
 
 ```ts
 import {model} from '@e22m4u/ts-repository';
