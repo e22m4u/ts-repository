@@ -382,7 +382,7 @@ class User {
 
 #### PropertyDefinition.required
 
-Определение свойства обязательным (запрет [пустых значений](https://www.npmjs.com/package/@e22m4u/js-repository#Пустые-значения)).
+Определение свойства обязательным.
 
 ```ts
 import {property, DataType} from '@e22m4u/ts-repository';
@@ -485,10 +485,8 @@ class User {
 Режимы проверки.
 
 - `PropertyUniqueness.STRICT` или `true` для строгой проверки;
-- `PropertyUniqueness.SPARSE` не проверять *пустые значения**;
+- `PropertyUniqueness.SPARSE` не проверять значения без полезной нагрузки;
 - `PropertyUniqueness.NON_UNIQUE` не проверять (по умолчанию);
-
-*i. Подробнее о пустых значениях см. в [основном модуле](https://www.npmjs.com/package/@e22m4u/js-repository#Пустые-значения).*
 
 ### @relation(metadata: RelationMetadata)
 
