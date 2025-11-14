@@ -438,9 +438,6 @@ class User {
 }
 ```
 
-*i. Для регистрации пользовательских валидаторов
-см. раздел «Валидаторы» [основного модуля](https://www.npmjs.com/package/@e22m4u/js-repository#валидаторы).*
-
 #### PropertyDefinition.transform
 
 Использование предустановленных трансформеров.
@@ -461,9 +458,6 @@ class User {
   name?: string;
 }
 ```
-
-*i. Для регистрации пользовательских трансформеров
-см. раздел «Трансформеры» [основного модуля](https://www.npmjs.com/package/@e22m4u/js-repository#трансформеры).*
 
 #### PropertyDefinition.unique
 
