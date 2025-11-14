@@ -231,8 +231,7 @@ class User {}
 
 #### ModelOptions.datasource
 
-Определение источника данных.  
-*(см. раздел «Источник данных» [основного модуля](https://www.npmjs.com/package/@e22m4u/js-repository#%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85))*
+Определение источника данных.
 
 ```ts
 import {model} from '@e22m4u/ts-repository';
@@ -240,6 +239,8 @@ import {model} from '@e22m4u/ts-repository';
 @model({datasource: 'mongo'}) // <=
 class User {}
 ```
+
+*i. Подробнее можно ознакомиться в разделе «Источник данных» [основного модуля](https://www.npmjs.com/package/@e22m4u/js-repository#%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85)*.
 
 #### ModelOptions.tableName
 
