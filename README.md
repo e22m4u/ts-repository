@@ -43,7 +43,11 @@ npm install @e22m4u/ts-repository
 
 ## Пример
 
-1\. Объявление источника данных и моделей с помощью декораторов.
+1\. Объявление
+[источника данных](https://www.npmjs.com/package/@e22m4u/js-repository#%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85)
+и
+[моделей](https://www.npmjs.com/package/@e22m4u/js-repository#%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C)
+с помощью декораторов.
 
 ```ts
 import {
@@ -100,7 +104,8 @@ class User {
 }
 ```
 
-2\. Регистрация моделей и работа с репозиторием.
+2\. Регистрация моделей и доступ к их
+[репозиториям](https://www.npmjs.com/package/@e22m4u/js-repository#%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B9).
 
 ```ts
 // регистрация моделей по классам
@@ -227,7 +232,7 @@ class User {}
 
 #### ModelOptions.datasource
 
-Определение [источника данных](https://www.npmjs.com/package/@e22m4u/ts-repository#%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85).
+Определение [источника данных](https://www.npmjs.com/package/@e22m4u/js-repository#%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85).
 
 ```ts
 import {model} from '@e22m4u/ts-repository';
@@ -283,7 +288,7 @@ class User {
 - [required](#PropertyDefinitionrequired) - исключение `null` и `undefined`;
 - [default](#PropertyDefinitiondefault) - значение по умолчанию;
 - [validate](#PropertyDefinitionvalidate) - проверка формата;
-- *transform* - модификаторы значения;
+- [transform](#PropertyDefinitiontransform) - модификаторы значения;
 - [unique](#PropertyDefinitionunique) - проверка уникальности;
 
 #### PropertyDefinition.type
@@ -437,7 +442,31 @@ class User {
 ```
 
 *i. Для регистрации пользовательских валидаторов
-см. раздел [Валидаторы](https://www.npmjs.com/package/@e22m4u/ts-repository#Валидаторы) основного модуля.*
+см. раздел [Валидаторы](https://www.npmjs.com/package/@e22m4u/ts-repository#валидаторы) основного модуля.*
+
+#### PropertyDefinition.transform
+
+Использование предустановленных трансформеров.
+
+- `trim` - удаление пробельных символов с начала и конца строки;
+- `toUpperCase` - перевод строки в верхний регистр;
+- `toLowerCase` - перевод строки в нижний регистр;
+
+```ts
+import {property, DataType} from '@e22m4u/ts-repository';
+
+@model()
+class User {
+  @property({
+    type: DataType.STRING,
+    transform: 'trim',
+  })
+  name?: string;
+}
+```
+
+*i. Для регистрации пользовательских трансформеров
+см. раздел [Трансформеры](https://www.npmjs.com/package/@e22m4u/ts-repository#трансформеры) основного модуля.*
 
 #### PropertyDefinition.unique
 
