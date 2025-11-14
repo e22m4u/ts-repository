@@ -385,7 +385,7 @@ class User {
 
 #### PropertyDefinition.required
 
-Определение свойства обязательным (запрет [пустых значений](https://www.npmjs.com/package/@e22m4u/ts-repository#Пустые-значения)).
+Определение свойства обязательным (запрет [пустых значений](https://www.npmjs.com/package/@e22m4u/js-repository#Пустые-значения)).
 
 ```ts
 import {property, DataType} from '@e22m4u/ts-repository';
