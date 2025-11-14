@@ -442,7 +442,7 @@ class User {
 ```
 
 *i. Для регистрации пользовательских валидаторов
-см. раздел [Валидаторы](https://www.npmjs.com/package/@e22m4u/ts-repository#валидаторы) основного модуля.*
+см. раздел [Валидаторы](https://www.npmjs.com/package/@e22m4u/js-repository#валидаторы) основного модуля.*
 
 #### PropertyDefinition.transform
 
@@ -466,7 +466,7 @@ class User {
 ```
 
 *i. Для регистрации пользовательских трансформеров
-см. раздел [Трансформеры](https://www.npmjs.com/package/@e22m4u/ts-repository#трансформеры) основного модуля.*
+см. раздел [Трансформеры](https://www.npmjs.com/package/@e22m4u/js-repository#трансформеры) основного модуля.*
 
 #### PropertyDefinition.unique
 
