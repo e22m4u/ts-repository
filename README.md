@@ -134,8 +134,9 @@ console.log(userWithRole);
 ## Расширение DatabaseSchema
 
 Класс `DatabaseSchema` данного модуля наследует все методы базового класса
-и добавляет два новых для работы с классами моделей
-*(см. раздел «Схема» [основного модуля](https://www.npmjs.com/package/@e22m4u/js-repository#%D1%81%D1%85%D0%B5%D0%BC%D0%B0))*.
+и добавляет два новых для работы с классами моделей. Подробнее о базовом классе
+можно ознакомиться в раздел «Схема»
+[основного модуля](https://www.npmjs.com/package/@e22m4u/js-repository#%D1%81%D1%85%D0%B5%D0%BC%D0%B0).
 
 ### defineModelByClass
 
