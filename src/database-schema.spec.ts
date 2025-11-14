@@ -1,11 +1,12 @@
 import {expect} from 'chai';
-import {DataType} from '@e22m4u/js-repository';
-import {Repository} from '@e22m4u/js-repository';
 import {DatabaseSchema} from './database-schema.js';
-import {ModelDefinition} from '@e22m4u/js-repository';
-import {model} from '@e22m4u/js-repository-decorators';
-import {DefinitionRegistry} from '@e22m4u/js-repository';
-import {property} from '@e22m4u/js-repository-decorators';
+import {model, property} from './decorators/index.js';
+import {
+  DataType,
+  Repository,
+  DefinitionRegistry,
+  ModelDefinition,
+} from '@e22m4u/js-repository';
 
 @model({datasource: 'myDatasource'})
 class MyModel {

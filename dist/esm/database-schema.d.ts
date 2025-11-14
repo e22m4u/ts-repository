@@ -1,6 +1,5 @@
 import { Constructor } from './types.js';
-import { Repository } from '@e22m4u/js-repository';
-import { DatabaseSchema as BaseDatabaseSchema } from '@e22m4u/js-repository';
+import { Repository, DatabaseSchema as BaseDatabaseSchema } from '@e22m4u/js-repository';
 /**
  * Database schema.
  */

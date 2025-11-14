@@ -28,6 +28,7 @@ export default [
       'mocha': eslintMochaPlugin,
       'chai-expect': eslintChaiExpectPlugin,
     },
+    
     rules: {
       ...eslintJs.configs.recommended.rules,
       ...eslintPrettierConfig.rules,
@@ -37,6 +38,7 @@ export default [
         {},
       ),
       '@typescript-eslint/no-unused-expressions': 0,
+      'no-duplicate-imports': 'error',
     },
   },
 ];

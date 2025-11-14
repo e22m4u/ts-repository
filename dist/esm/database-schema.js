@@ -1,5 +1,5 @@
-import { DatabaseSchema as BaseDatabaseSchema } from '@e22m4u/js-repository';
-import { getModelDefinitionFromClass } from '@e22m4u/js-repository-decorators';
+import { getModelDefinitionFromClass } from './definition/index.js';
+import { DatabaseSchema as BaseDatabaseSchema, } from '@e22m4u/js-repository';
 /**
  * Database schema.
  */
