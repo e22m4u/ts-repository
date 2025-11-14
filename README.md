@@ -43,8 +43,7 @@ npm install @e22m4u/ts-repository
 
 ## Пример
 
-1\. Объявление источника данных и моделей с помощью декораторов.  
-*(см. раздел «Источник данных» [основного модуля](https://www.npmjs.com/package/@e22m4u/js-repository#%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85))*
+1\. Объявление источника данных и моделей с помощью декораторов.
 
 ```ts
 import {
@@ -102,7 +101,6 @@ class User {
 ```
 
 2\. Регистрация моделей и доступ к их репозиториям.  
-*(см. раздел «Репозиторий» [основного модуля](https://www.npmjs.com/package/@e22m4u/js-repository#%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B9))*
 
 ```ts
 // регистрация моделей по классам
@@ -135,7 +133,7 @@ console.log(userWithRole);
 
 Класс `DatabaseSchema` данного модуля наследует все методы базового класса
 и добавляет два новых для работы с классами моделей. Подробнее о базовом классе
-можно ознакомиться в раздел «Схема»
+можно ознакомиться в разделе «Схема»
 [основного модуля](https://www.npmjs.com/package/@e22m4u/js-repository#%D1%81%D1%85%D0%B5%D0%BC%D0%B0).
 
 ### defineModelByClass
@@ -231,7 +229,7 @@ class User {}
 
 #### ModelOptions.datasource
 
-Определение источника данных.
+Определение источника данных для текущей модели.
 
 ```ts
 import {model} from '@e22m4u/ts-repository';
@@ -239,8 +237,6 @@ import {model} from '@e22m4u/ts-repository';
 @model({datasource: 'mongo'}) // <=
 class User {}
 ```
-
-*i. Подробнее можно ознакомиться в разделе «Источник данных» [основного модуля](https://www.npmjs.com/package/@e22m4u/js-repository#%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85)*.
 
 #### ModelOptions.tableName
 
