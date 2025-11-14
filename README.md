@@ -488,7 +488,7 @@ class User {
 Режимы проверки.
 
 - `PropertyUniqueness.STRICT` или `true` для строгой проверки
-- `PropertyUniqueness.SPARSE` не проверять [пустые значения](https://www.npmjs.com/package/@e22m4u/ts-repository#Пустые-значения)
+- `PropertyUniqueness.SPARSE` не проверять [пустые значения](https://www.npmjs.com/package/@e22m4u/js-repository#Пустые-значения)
 - `PropertyUniqueness.NON_UNIQUE` не проверять (по умолчанию)
 
 ### @relation(metadata: RelationMetadata)
