@@ -1,13 +1,13 @@
 ## @e22m4u/ts-repository
 
 Модуль предоставляет расширенную версию класса `DatabaseSchema` из пакета
-[@e22m4u/js-repository](https://www.npmjs.com/package/@e22m4u/js-repository)
-для работы в TypeScript окружении. Он добавляет методы, которые позволяют
-определять модели данных используя TypeScript классы вместо объектов
-с определениями.
+[@e22m4u/js-repository](https://www.npmjs.com/package/@e22m4u/js-repository),
+добавляя методы и TypeScript декораторы, которые позволяют описывать модели
+данных используя классы вместо объектов определений.
 
-Модуль реэкспортирует все сущности из
-[@e22m4u/js-repository](https://www.npmjs.com/package/@e22m4u/js-repository).
+Модуль реэкспортирует все сущности из JavaScript версии
+[основного модуля](https://www.npmjs.com/package/@e22m4u/js-repository),
+исключая необходимость установки дополнительных зависимостей.
 
 ## Оглавление
 
