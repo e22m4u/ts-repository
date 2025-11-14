@@ -43,11 +43,8 @@ npm install @e22m4u/ts-repository
 
 ## Пример
 
-1\. Объявление
-[источника данных](https://www.npmjs.com/package/@e22m4u/js-repository#%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85)
-и
-[моделей](https://www.npmjs.com/package/@e22m4u/js-repository#%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C)
-с помощью декораторов.
+1\. Объявление источника данных и моделей с помощью декораторов.  
+*(см. раздел «Источник данных» [основного модуля](https://www.npmjs.com/package/@e22m4u/js-repository#%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85))*
 
 ```ts
 import {
@@ -104,8 +101,8 @@ class User {
 }
 ```
 
-2\. Регистрация моделей и доступ к их
-[репозиториям](https://www.npmjs.com/package/@e22m4u/js-repository#%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B9).
+2\. Регистрация моделей и доступ к их репозиториям.  
+*(см. раздел «Репозиторий» [основного модуля](https://www.npmjs.com/package/@e22m4u/js-repository#%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B9))*
 
 ```ts
 // регистрация моделей по классам
@@ -442,7 +439,7 @@ class User {
 ```
 
 *i. Для регистрации пользовательских валидаторов
-см. раздел «[Валидаторы](https://www.npmjs.com/package/@e22m4u/js-repository#валидаторы)» основного модуля.*
+см. раздел «Валидаторы» [основного модуля](https://www.npmjs.com/package/@e22m4u/js-repository#валидаторы).*
 
 #### PropertyDefinition.transform
 
@@ -466,7 +463,7 @@ class User {
 ```
 
 *i. Для регистрации пользовательских трансформеров
-см. раздел «[Трансформеры](https://www.npmjs.com/package/@e22m4u/js-repository#трансформеры)» основного модуля.*
+см. раздел «Трансформеры» [основного модуля](https://www.npmjs.com/package/@e22m4u/js-repository#трансформеры).*
 
 #### PropertyDefinition.unique
 
@@ -487,9 +484,11 @@ class User {
 
 Режимы проверки.
 
-- `PropertyUniqueness.STRICT` или `true` для строгой проверки
-- `PropertyUniqueness.SPARSE` не проверять [пустые значения](https://www.npmjs.com/package/@e22m4u/js-repository#Пустые-значения)
-- `PropertyUniqueness.NON_UNIQUE` не проверять (по умолчанию)
+- `PropertyUniqueness.STRICT` или `true` для строгой проверки;
+- `PropertyUniqueness.SPARSE` не проверять *пустые значения**;
+- `PropertyUniqueness.NON_UNIQUE` не проверять (по умолчанию);
+
+*i. Подробнее о пустых значениях см. в [основном модуле](https://www.npmjs.com/package/@e22m4u/js-repository#Пустые-значения).*
 
 ### @relation(metadata: RelationMetadata)
 
